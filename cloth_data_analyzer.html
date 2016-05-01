@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>[RESULT] Node Analyzer</title>
+		<style>
+			#popup_background {
+				position: fixed;
+				top: 0; left: 0;
+				width: 100%; height: 100%;
+				background-color: rgba(0, 0, 0, 0.5);
+				z-index: 1200;
+				width: 100%;
+				height: 100%;
+			}
+			#popup_window {
+				background-color: white;
+				position: absolute;
+				top: 40%;
+				left: 30%;
+				width: 40%;
+				height: 20%;
+				border-radius: 10px;
+				border:1px dotted black;
+			}
+			#popup_window .zone {
+				display: block;
+				position: absolute;
+				top: 0; left: 0;
+				width: 100%;
+				height: 100%;
+				font-size: 100%;
+				text-align: center;
+			}
+			#content {
+				position: absolute;
+				top: 0;
+				left: 1%;
+				width: 98%;
+				height: 100%;
+			}
+			
+			#content_menu {
+				position: fixed;
+				background-color: white;
+				border: 1px dotted black;
+				border-radius: 0 0 10px 10px;
+				width: 100%;
+				height: 5%;
+			}
+			
+			.content_item {
+				display:block;
+				box-sizing: border-box;
+				width: 15%; height: 100%;
+				float: right;
+				border-radius: 5px;
+				border: 1px solid black;
+				text-align: center;
+				font-size: 1.5vw;
+			}
+			
+			.list {
+				float: left;
+				overflow-y: scroll;
+				margin-top: 5%;
+				height: 90%;
+			}
+			
+			.infCont {
+				display: none;
+			}
+			span:hover .infCont {
+				display:block;
+				position: absolute;
+				background-color: #DDD;
+				top: 5%;
+				border: 1px solid black;
+			}
+			
+			tr:nth-child(even) {
+				background-color: #CCC;
+			}
+			
+			tr:target {
+				background-color: #AAA;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="popup_background">
+			<div id="popup_window">
+				<div class="zone" id="drop_zone">Drop files here</div>
+				<div class="zone" id="load_zone" style="display: none;">Loading file...</div>
+				<div class="zone" id="error_zone" style="display: none;">There has been an error while reading the file. Click to retry.</div>
+			</div>
+		</div>
+		<div id="content">
+			<div id="content_menu">
+				<div class="content_item">
+					<div id="clear_file">Clear file.</div>
+				</div>
+			</div>
+			<div id="content_main">
+				<div id="boneList" class="list"></div>
+				<div id="particleList" class="list"></div>
+				<div id="constraints" class="list"></div>
+				<div id="log"></div>
+			</div>
+		</div>
+		<script src="js/utils.js"></script>
+		<script src="js/cloth_data_analyzer.js"></script>
+
+	</body>
+</html>
