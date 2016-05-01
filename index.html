@@ -1,11 +1,66 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Index</title>
+		<meta charset="utf-8">
+		<title>HKX File analyzer</title>
+		<style type="text/css">
+			body {
+				color: #333;
+			}
+			
+			a {
+				color: #336;
+			}
+			
+			a:visited {
+				color: #636;
+			}
+			
+			#title, #main, #footer {
+				left: 15%;
+				right: 15%;
+				padding: 0px 20px 0px 20px;
+				width: auto;
+				border: 1px dashed #AAA;
+				border-radius: 30px;
+			}
+			
+			#title {
+				position: fixed;
+				top: 0%;
+				height:8%;
+				text-align: center;
+			}
+			#main {
+				position: fixed;
+				top: 10%;
+				height: 78%;
+				overflow-y: auto scroll;
+			}
+			#footer {
+				position: fixed;
+				top: 90%;
+				height: 5%;
+			}
+		</style>
 	</head>
 	<body>
-		<ul>
-			<li><a href="cloth_data_analyzer.html">Cloth data analyzer</a></li>
-		</ul>
+		<div id="title">
+			<h1>HKX file analyzer</h1>
+		</div>
+		<div id="main">
+			<p>
+				These web pages are front end analyzer to assist understanding HKX pages.<br />
+				The files must first be converted to XML using the <a href="http://github.com/dexesttp/hkxpack">HKXPack</a> tool or similar.
+			</p>
+			<ul>
+				<li><a href="cloth_data_analyzer.html">Cloth data analyzer</a></li>
+			</ul>
+		</div>
+		<div id="footer">
+			<p>
+				DexesTTP - 2016 - <a href="http://github.com/DexesTTP/HKX-Analyzer/tree/gh-pages">Fork me on GitHub !</a>
+			</p>
+		</div>
 	</body>
 </html>
