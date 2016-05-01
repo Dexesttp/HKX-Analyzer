@@ -14,6 +14,13 @@ function clean(array) {
 	return array;
 }
 
+function setError(err) {
+	let out = '';
+	out += 'There has been an error while reading the file. Click to retry.';
+	out += "<br />[" + "?" + "] " + err.name + " : " + err.message;
+	errZone.innerHTML = out;
+	throw err;
+}
 
 
 
@@ -21,11 +28,10 @@ function handleFileSelect(evt) {
 	evt.stopPropagation();
 	evt.preventDefault();
 	
-	var fileList =evt.dataTransfer.files;
+	let fileList =evt.dataTransfer.files;
 	
 	// Visuals : Display loading message, remove drop message
 	displayPopup(loadZone);
-	var data;
 
 	for (var i = 0, f; f = fileList[i]; i++) {
 		var reader = new FileReader();
@@ -33,13 +39,13 @@ function handleFileSelect(evt) {
 		reader.onloadend = function(event) {
 			var text = event.target.result;
 			try {
-				data = parser.parseFromString(text, "text/xml");
+				let data = parser.parseFromString(text, "text/xml");
 				loadData(data);
 				popupWindow.style.display = "none";
 			}
 			catch(err) {
 				displayPopup(errZone);
-				errZone.innerHTML += "<br />" + err.name + " : " + err.message;
+				setError(err)
 			}
 		}
 		reader.readAsText(f);
@@ -66,7 +72,7 @@ function handleDragOver(evt) {
 
 // Delete the file
 function handleDelete(evt) {
-	textZones.forEach(function(zone) {innerHTML = ""});
+	textZones.forEach(function(zone) {zone.innerHTML = ""});
 	displayPopup(dropZone);
 }
 

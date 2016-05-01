@@ -63,12 +63,13 @@
 				float: left;
 				overflow-y: scroll;
 				margin-top: 5%;
-				height: 90%;
+				height: 90vh;
 			}
 			
 			.infCont {
 				display: none;
 			}
+			
 			span:hover .infCont {
 				display:block;
 				position: absolute;
@@ -91,7 +92,7 @@
 			<div id="popup_window">
 				<div class="zone" id="drop_zone">Drop files here</div>
 				<div class="zone" id="load_zone" style="display: none;">Loading file...</div>
-				<div class="zone" id="error_zone" style="display: none;">There has been an error while reading the file. Click to retry.</div>
+				<div class="zone" id="error_zone" style="display: none;"></div>
 			</div>
 		</div>
 		<div id="content">
@@ -103,7 +104,9 @@
 			<div id="content_main">
 				<div id="boneList" class="list"></div>
 				<div id="particleList" class="list"></div>
-				<div id="constraints" class="list"></div>
+				<div id="standardConstraints" class="list"></div>
+				<div id="stretchConstraints" class="list"></div>
+				<div id="bendConstraints" class="list"></div>
 				<div id="log"></div>
 			</div>
 		</div>
